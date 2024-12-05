@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Never delete or modify this value unless you have thoroughly understood man configuration.nix
