@@ -4,10 +4,12 @@ with pkgs; mkShell {
   buildInputs = [
     neovim
     htop
-    net-tools
     sysstat
+    tmux
     git
     curl
+    wget
+    man
     jq
   ];
 }
