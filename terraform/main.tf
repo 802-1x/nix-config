@@ -12,18 +12,17 @@ terraform {
 resource "proxmox_vm_qemu" "template" {
   count                 = 1
   name                  = "template"
+  desc                  = "template"
   target_node           = var.target_node
 
   clone                 = var.template_name_1
   full_clone            = true
 
-  agent                 = 1
   os_type               = "Linux"
   cores                 = 1
   sockets               = 1
   cpu_type              = "host"
   memory                = 1024
-  scsihw                = "virtio-scsi-pci"
   bootdisk              = "scsi0"
 
   disk {
