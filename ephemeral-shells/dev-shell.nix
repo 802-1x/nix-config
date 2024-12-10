@@ -4,5 +4,6 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.vscode
     pkgs.smlnj
+    pkgs.bandit
   ];
 }
