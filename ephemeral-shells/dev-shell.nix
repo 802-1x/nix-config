@@ -1,9 +1,8 @@
 { pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
 
 pkgs.mkShell {
-  buildInputs = [ pkgs.vscode ];
-
-  shellHook = ''
-    alias dev='code'
-  '';
+  buildInputs = [
+    pkgs.vscode
+    pkgs.smlnj
+  ];
 }
