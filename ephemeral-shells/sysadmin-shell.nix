@@ -21,7 +21,10 @@ in
     ];
 
   shellHook = ''
-     mkdir -p ~/.config/nvim
+    # Append SHELL_TRACKER environment variable
+    export SHELL_TRACKER="$SHELL_TRACKER:sysadmin"
+
+    mkdir -p ~/.config/nvim
       cp ${neovimConfig} ~/.config/nvim/init.lua
     '';
   }
