@@ -16,6 +16,9 @@ in
     buildInputs = myBuildInputs;
 
   shellHook = ''
+    # Append SHELL_TRACKER environment variable
+    export SHELL_TRACKER="$SHELL_TRACKER:dev"
+
     echo "Welcome to the development shell!"
     echo "Build inputs: ${builtins.concatStringsSep ", " packageNames}"
   '';
