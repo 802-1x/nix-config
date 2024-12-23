@@ -21,6 +21,7 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     modules = [ pkgs.xorg.xf86videofbdev ];
+    videoDrivers = [ "hyperv_fb" "modesetting" "nvida" ];
   };
 
   boot.kernelParams = [ "nouveau.modeset=0" ];
