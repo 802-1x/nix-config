@@ -35,4 +35,11 @@
     group = "gdm";
     extraGroups = [ "video" ];
   };
+
+  users.users.gui = {
+    isNormalUser = true;
+    home = "/home/gui";
+    description = "test";
+    extraGroups = [ "wheel" "networkmanager" "tty" "input" "audio" "video" ];
+  };
 }
