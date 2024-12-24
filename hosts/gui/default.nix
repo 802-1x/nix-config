@@ -4,6 +4,7 @@
   imports = 
     [
       ./hardware-configuration.nix
+      ./common/locale.nix
     ];
 
   boot.loader.grub.enable = true;
