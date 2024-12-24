@@ -18,8 +18,6 @@
 
   system.stateVersion = "24.11";
 
-  networking.networkmanager.enable = false;
-
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
