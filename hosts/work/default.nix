@@ -30,6 +30,15 @@
     gnome-remote-desktop
   ];
 
+  environment.gnome.excludePackages = with pkgs; [
+    cheese
+    epiphany
+    gnome-music
+    gnome-tour
+    gnome-weather
+    yelp
+  ];
+
   services.gnome.gnome-remote-desktop.enable = true;
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
