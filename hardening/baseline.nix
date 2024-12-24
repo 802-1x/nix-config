@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  # Never delete or modify this value unless you have thoroughly understood man configuration.nix
-  system.stateVersion = "24.05";
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Limit sudo use to wheel members due to occasional security issues (e.g., CVE-2021-3156)
