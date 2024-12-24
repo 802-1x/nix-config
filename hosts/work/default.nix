@@ -18,5 +18,6 @@
   networking.hostName = "work";
   networking.wireless.enable = true;
 
+  # Never delete or modify this value unless you have thoroughly understood man configuration.nix
   system.stateVersion = "24.11";
 }
