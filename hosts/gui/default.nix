@@ -11,6 +11,7 @@
 
   networking.hostName = "test";
   networking.wireless.enable = true;
+  networking.networkmanager.enable = false;
 
   system.stateVersion = "24.11";
 
