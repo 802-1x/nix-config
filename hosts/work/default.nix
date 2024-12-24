@@ -7,6 +7,7 @@
       ./common/locale.nix
       ./common/current-system-packages.nix
       ./modules/gnome-hyper-v/default.nix
+      ./hardening/baseline.nix
     ];
 
   # Use the GRUB 2 boot loader
