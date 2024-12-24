@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./common/locale.nix
+      ./common/current-system-packages.nix
     ];
 
   # Use the GRUB 2 boot loader
