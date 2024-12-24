@@ -27,6 +27,15 @@
     modules = [ pkgs.xorg.xf86videofbdev ];
   };
 
+  environment.systemPackages = with pkgs; [
+    gnome-remote-desktop
+  ];
+
+  services.gnome.gnome-remote-desktop.enable = true;
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
+  services.xrdp.openFirewall = true;
+
   boot.kernelParams = [ "nouveau.modeset=0" ];
 
   nixpkgs.config.allowUnfree = true;
