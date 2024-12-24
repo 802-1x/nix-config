@@ -10,7 +10,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "test";
+  networking.hostName = "work";
   networking.wireless.enable = true;
   networking.networkmanager.enable = false;
 
@@ -38,10 +38,10 @@
     extraGroups = [ "video" ];
   };
 
-  users.users.gui = {
+  users.users.admin = {
     isNormalUser = true;
-    home = "/home/gui";
-    description = "test";
+    home = "/home/admin";
+    description = "Administrator";
     extraGroups = [ "wheel" "networkmanager" "tty" "input" "audio" "video" ];
   };
 }
