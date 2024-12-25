@@ -17,7 +17,44 @@
 
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
+    gnomeExtensions.caffeine
   ];
+
+  programs.dconf.profiles.user = {
+    databases = [{
+      lockAll = false;
+      settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+          clock-format = "24h";
+          clock-show-weekday = true;
+        };
+        "org/gnome/desktop/media-handling" = {
+          automount = false;
+          automount-open = false;
+          autorun-never = true;
+        };
+        "org/gnome/settings-daemon/plugins/power" = {
+          sleep-inactive-ac-type = "nothing";
+        };
+        "org/gnome/mutter" = {
+          edge-tiling = true;
+          dynamic-workspaces = true;
+          experimental-features = [ "variable-refresh-rate" ];          
+        };
+        "org/gnome/shell" = {
+          enabled-extensions = [ "caffeine@patapn.info" ];
+        };
+        "org/gnome/shell/extensions/caffeine" = {
+          toggle-state = true;
+          show-notifications = true;
+          show-indicator = true;
+          restore-state = true;
+          user-enabled = true;
+        };
+      };
+    }];
+  };
 
   # If using GNOME Desktop Manager then exclude these packages from installation
   environment.gnome.excludePackages = with pkgs; [
