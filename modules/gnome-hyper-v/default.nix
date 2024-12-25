@@ -18,7 +18,6 @@
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.caffeine
-    gnomeExtensions.openweather
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
     dconf-editor
@@ -50,7 +49,6 @@
           disable-user-extensions = false;
           enabled-extensions = [
             "caffeine@patapn.info"
-            "openweather-extension@penguin-teal.github.io"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
@@ -87,20 +85,6 @@
           show-storage = true;
           show-battery = false;
           show-gpu = false;
-        };
-        # Testing
-        "org/gnome/shell/extensions/openweather" = {
-          unit = 'fahrenheit'
-          wind-speed-unit = 'mph'
-          pressure-unit = 'inHg'
-          show-text-in-panel = true
-          show-comment-in-panel = true
-          position-in-panel = 'center'
-          translate-condition = true
-          actual-city = 0
-          use-default-owm-key = true
-          days-forecast = 5
-          decimal-places = 1
         };
       };
     }];
