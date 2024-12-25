@@ -90,7 +90,6 @@
         };
         # Testing
         "org/gnome/shell/extensions/openweather" = {
-          city = '40.7128,-74.0060>New York City'
           unit = 'fahrenheit'
           wind-speed-unit = 'mph'
           pressure-unit = 'inHg'
