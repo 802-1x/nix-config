@@ -50,6 +50,7 @@
           disable-user-extensions = false;
           enabled-extensions = [
             "caffeine@patapn.info"
+            "openweather-extension@penguin-teal.github.io"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
