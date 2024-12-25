@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.caffeine
+    dconf-editor
   ];
 
   programs.dconf.profiles.user = {
