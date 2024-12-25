@@ -96,7 +96,7 @@
   nixpkgs.config.allowUnfree = true;
   hardware.nvidia.open = true;
 
-  users.groups.gdm  ={};
+  users.groups.gdm = {};
   users.users.gdm = {
     isSystemUser = true;
     group = "gdm";
