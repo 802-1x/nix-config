@@ -88,6 +88,21 @@
           show-battery = false;
           show-gpu = false;
         };
+        # Testing
+        "org/gnome/shell/extensions/openweather" = {
+          city = '40.7128,-74.0060>New York City'
+          unit = 'fahrenheit'
+          wind-speed-unit = 'mph'
+          pressure-unit = 'inHg'
+          show-text-in-panel = true
+          show-comment-in-panel = true
+          position-in-panel = 'center'
+          translate-condition = true
+          actual-city = 0
+          use-default-owm-key = true
+          days-forecast = 5
+          decimal-places = 1
+        };
       };
     }];
   };
