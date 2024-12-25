@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.caffeine
+    gnomeExtensisn.openweather
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
     dconf-editor
