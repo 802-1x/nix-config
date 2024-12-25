@@ -18,6 +18,8 @@
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.caffeine
+    gnomeExtensions.workspace-indicator
+    gnomeExtensions.vitals
     dconf-editor
   ];
 
@@ -44,7 +46,12 @@
           experimental-features = [ "variable-refresh-rate" ];          
         };
         "org/gnome/shell" = {
-          enabled-extensions = [ "caffeine@patapn.info" ];
+          disable-user-extensions = false;
+          enabled-extensions = [
+            "caffeine@patapn.info"
+            "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+            "Vitals@CoreCoding.com"            
+          ];
         };
         "org/gnome/shell/extensions/caffeine" = {
           toggle-state = true;
@@ -52,6 +59,32 @@
           show-indicator = true;
           restore-state = true;
           user-enabled = true;
+        };
+        "org/gnome/shell/extensions/workspace-indicator" = {
+          user-enabled = true;
+          embed-previews = true;
+          workspace-names = "[ 'display', 'work', 'other' ]";
+        };
+        "org/gnome/shell/extensions/vital" = {
+          update-time = "5";
+          position-in-panel = "2";
+          use-higher-precision = true;
+          alphabetize = true;
+          hide-zeros = false;
+          fixed-widths = true;
+          hide-icons = false;
+          menu-centered = true;
+          icon-styles = "1";
+          show-temperature = false;
+          show-voltage = false;
+          show-fan = false;
+          show-memory = true;
+          show-processor = true;
+          show-system = true;
+          show-network = true;
+          show-storage = true;
+          show-battery = false;
+          show-gpu = false;
         };
       };
     }];
