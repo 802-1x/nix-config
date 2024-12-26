@@ -40,9 +40,38 @@
         };
 
         "org/gnome/desktop/interface" = {
-          color-scheme = "prefer-dark";
+          accent-color = "blue";
           clock-format = "24h";
+          clock-show-date = true;
+          clock-show-seconds = true;
           clock-show-weekday = true;
+          color-scheme = "prefer-dark";
+          font-antialiasing = "grayscale";
+          font-hinting = "slight";
+          icon-theme = "Adwaita";
+        };
+
+        "org/gnome/desktop/notifications" = {
+          application-children = [
+            "gnome-power-panel"
+            "firefox"
+            "org-keepassxc-keepassxc"
+            "signal-desktop"
+            "discord"
+            "alacritty"
+            "org-gnome-nautilus"
+            "gnome-network-panel"
+            "slack"
+            "gnome-control-center"
+            "gimp"
+            "com-nextcloud-desktopclient-nextcloud"
+          ];
+          show-banners = true;
+          show-in-lockscreen = false;
+        };
+
+        "org/gnome/desktop/notifications/application/alacritty" = {
+          application-id = "Alacritty.desktop";
         };
 
         "org/gnome/desktop/media-handling" = {
