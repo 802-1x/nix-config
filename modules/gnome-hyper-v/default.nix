@@ -136,7 +136,7 @@
             "pop-shell@system76.com"
             "dash-to-panel@jderose9.github.com"
             "gnome-shell-screenshot@ttll.de"
-            "media-controls@johannespaul.github.com"
+            "mediacontrols@cliffniff.github.com"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
