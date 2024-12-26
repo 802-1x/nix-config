@@ -26,6 +26,7 @@
     dconf-editor
   ];
 
+  # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
   programs.dconf.profiles.user = {
     databases = [{
       lockAll = false;
@@ -164,6 +165,12 @@
           show-storage = true;
           show-battery = false;
           show-gpu = false;
+        };
+
+        "org/gnome/shell/extensions/dash-to-panel" = {
+          panel-positions = ``
+            "0":"TOP"
+          ``;
         };
 
         #"org/gnome/shell/extensions/screenshot" = {
