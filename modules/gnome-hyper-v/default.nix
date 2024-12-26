@@ -210,8 +210,6 @@
           fullscreen-launcher = false;
           stacking-with-mouse = true;
           active-hint = true;
-          gap-inner = mkUint32 2;
-          gap-outer = mkUint32 2;
           smart-gaps = true;
         };
 
