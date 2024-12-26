@@ -173,6 +173,10 @@
           ``;
         };
 
+        "system/proxy" = {
+          mode = "none";
+        };
+
         #"org/gnome/shell/extensions/screenshot" = {
         #  enable-indicator = true;
         #};
