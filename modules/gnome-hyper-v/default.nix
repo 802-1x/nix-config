@@ -129,6 +129,9 @@
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
+          favorite-apps = [
+            "org.gnome.Nautilus.desktop"
+          ];
         };
 
         "org/gnome/shell/extensions/caffeine" = {
