@@ -30,6 +30,9 @@
     databases = [{
       lockAll = false;
       settings = {
+        "org/gnome/desktop/background" = {
+          picture-uri-dark"https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
+        };
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
           clock-format = "24h";
