@@ -20,6 +20,7 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.pop-shell
     gnomeExtensions.screenshot-tool
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
@@ -29,7 +30,6 @@
   # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
   programs.dconf.profiles.user = {
     databases = [{
-      enable = true;
       lockAll = false;
       settings = {
         "org/gnome/desktop/background" = {
@@ -133,6 +133,7 @@
           enabled-extensions = [
             "blur-my-shell@aunetx"
             "caffeine@patapn.info"
+            "pop-shell@system76.com"
             "dash-to-panel@jderose9.github.com"
             "gnome-shell-screenshot@ttll.de"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
@@ -196,6 +197,22 @@
 
         "org/gnome/shell/extensions/dash-to-panel" = {
           panel-positions = ''{"0":"TOP"}'';
+          animate-app-switch = true;
+          animate-window-launch = true;
+          stockgs-keep-dash = false;
+          tray-size = "0";
+        };
+
+        "org/gnome/shell/extensions/pop-shell" = {
+          tile-by-default = true;
+          show-title = true;
+          snap-to-grid = true;
+          fullscreen-launcher = false;
+          stacking-with-mouse = true;
+          active-hint = true;
+          gap-inner = mkUint32 2;
+          gap-outer = mkUint32 2;
+          smart-gaps = true;
         };
 
         "system/proxy" = {
