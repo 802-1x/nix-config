@@ -70,10 +70,6 @@
           show-in-lockscreen = false;
         };
 
-        "org/gnome/desktop/notifications/application/alacritty" = {
-          application-id = "Alacritty.desktop";
-        };
-
         "org/gnome/desktop/media-handling" = {
           automount = false;
           automount-open = false;
@@ -86,6 +82,18 @@
 
         "org/gnome/desktop/peripherals/touchpad" = {
           two-finger-scrolling-enabled = true;
+        };
+
+        "org/gnome/desktop/privacy" = {
+          disable-microphone = false;
+        };
+
+        "org/gnome/desktop/sound" = {
+          event-sounds = false;
+        };
+
+        "org/gnome/desktop/wm/preferences" = {
+          button-layout = "appmenu:minimize,maximize,close";
         };
 
         "org/gnome/settings-daemon/plugins/power" = {
