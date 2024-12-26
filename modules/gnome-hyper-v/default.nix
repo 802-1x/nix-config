@@ -31,7 +31,12 @@
       lockAll = false;
       settings = {
         "org/gnome/desktop/background" = {
-          picture-uri-dark"https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
+          color-shading-type = "solid";
+          picture-uri = "https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
+          picture-uri-dark = "https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
+          picture-options = "stretched";
+          primary-color = "#3071AE";
+          secondary-color = "#000000";
         };
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
