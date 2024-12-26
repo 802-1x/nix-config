@@ -38,24 +38,37 @@
           primary-color = "#3071AE";
           secondary-color = "#000000";
         };
+
         "org/gnome/desktop/interface" = {
           color-scheme = "prefer-dark";
           clock-format = "24h";
           clock-show-weekday = true;
         };
+
         "org/gnome/desktop/media-handling" = {
           automount = false;
           automount-open = false;
           autorun-never = true;
         };
+
+        "org/gnome/desktop/peripherals/keyboard" = {
+          numlock-state = true;
+        };
+
+        "org/gnome/desktop/peripherals/touchpad" = {
+          two-finger-scrolling-enabled = true;
+        };
+
         "org/gnome/settings-daemon/plugins/power" = {
           sleep-inactive-ac-type = "nothing";
         };
+
         "org/gnome/mutter" = {
           edge-tiling = true;
           dynamic-workspaces = true;
           experimental-features = [ "variable-refresh-rate" ];          
         };
+
         "org/gnome/shell" = {
           disable-user-extensions = false;
           enabled-extensions = [
@@ -66,6 +79,7 @@
             "Vitals@CoreCoding.com"            
           ];
         };
+
         "org/gnome/shell/extensions/caffeine" = {
           toggle-state = true;
           show-notifications = true;
@@ -73,11 +87,13 @@
           restore-state = true;
           user-enabled = true;
         };
+
         "org/gnome/shell/extensions/workspace-indicator" = {
           user-enabled = true;
           embed-previews = true;
           workspace-names = "[ 'display', 'work', 'other' ]";
         };
+
         "org/gnome/shell/extensions/vital" = {
           update-time = "5";
           position-in-panel = "2";
@@ -99,6 +115,7 @@
           show-battery = false;
           show-gpu = false;
         };
+
         #"org/gnome/shell/extensions/screenshot" = {
         #  enable-indicator = true;
         #};
