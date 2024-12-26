@@ -18,8 +18,11 @@
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.caffeine
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.screenshot-tool
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
+    gnome-screenshot
     dconf-editor
   ];
 
@@ -49,6 +52,8 @@
           disable-user-extensions = false;
           enabled-extensions = [
             "caffeine@patapn.info"
+            "dash-to-panel@jderose9.github.com"
+            "gnome-shell-screenshot@ttll.de"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
@@ -86,6 +91,9 @@
           show-battery = false;
           show-gpu = false;
         };
+        #"org/gnome/shell/extensions/screenshot" = {
+        #  enable-indicator = true;
+        #};
       };
     }];
   };
