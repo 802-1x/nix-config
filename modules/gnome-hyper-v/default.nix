@@ -17,18 +17,19 @@
 
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
+    gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
     gnomeExtensions.screenshot-tool
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
-    gnome-screenshot
     dconf-editor
   ];
 
   # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
   programs.dconf.profiles.user = {
     databases = [{
+      enable = true;
       lockAll = false;
       settings = {
         "org/gnome/desktop/background" = {
@@ -102,6 +103,13 @@
           skip-newer = false;
         };
 
+        "org/gnome/nautilus/preferences" = {
+          default-folder-viewer = "icon-view";
+          migrated-gtk-settings = true;
+          search-filter-time-type = "last_modified";
+          search-view = "list-view";
+        };
+
         "org/gnome/settings-daemon/plugins/power" = {
           sleep-inactive-ac-type = "nothing";
         };
@@ -116,13 +124,14 @@
           disable-user-extensions = false;
           disabled-extensions = [
             "apps-menu@gnome-shell-extensions.gcampax.github.com"
-            "apps-menu@gnome-shell-extensions.gcampax.github.com"
+            "auto-move.windows@gnome-shell-extensions.gcampax.github.com"
             "native-window-placement@gnome-shell-extensions.gcampax.github.com"
             "places-menu@gnome-shell-extensions.gcampax.github.com"
             "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
             "user-theme@gnome-shell-extensions.gcampax.github.com"
           ];
           enabled-extensions = [
+            "blur-my-shell@aunetx"
             "caffeine@patapn.info"
             "dash-to-panel@jderose9.github.com"
             "gnome-shell-screenshot@ttll.de"
@@ -132,6 +141,16 @@
           favorite-apps = [
             "org.gnome.Nautilus.desktop"
           ];
+        };
+
+        "org/gnome/shell/extensions/blur-my-shell" = {
+          appfolder-dialog-opacity = "0.51";
+          brightness = "0.6";
+          dash-opacity = "1.0";
+          debug = false;
+          hacks-level = "1";
+          hidetopbar = false;
+          sigma = "30";
         };
 
         "org/gnome/shell/extensions/caffeine" = {
@@ -176,18 +195,12 @@
         };
 
         "org/gnome/shell/extensions/dash-to-panel" = {
-          panel-positions = ``
-            "0":"TOP"
-          ``;
+          panel-positions = ''{"0":"TOP"}'';
         };
 
         "system/proxy" = {
           mode = "none";
         };
-
-        #"org/gnome/shell/extensions/screenshot" = {
-        #  enable-indicator = true;
-        #};
       };
     }];
   };
