@@ -20,8 +20,8 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.media-controls
     gnomeExtensions.pop-shell
-    gnomeExtensions.screenshot-tool
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
     dconf-editor
@@ -136,6 +136,7 @@
             "pop-shell@system76.com"
             "dash-to-panel@jderose9.github.com"
             "gnome-shell-screenshot@ttll.de"
+            "media-controls@johannespaul.github.com"
             "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
             "Vitals@CoreCoding.com"            
           ];
