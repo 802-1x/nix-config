@@ -96,6 +96,11 @@
           button-layout = "appmenu:minimize,maximize,close";
         };
 
+        "org/gnome/file-roller/dialogs/extract" = {
+          recreate-folders = true;
+          skip-newer = false;
+        };
+
         "org/gnome/settings-daemon/plugins/power" = {
           sleep-inactive-ac-type = "nothing";
         };
@@ -108,6 +113,14 @@
 
         "org/gnome/shell" = {
           disable-user-extensions = false;
+          disabled-extensions = [
+            "apps-menu@gnome-shell-extensions.gcampax.github.com"
+            "apps-menu@gnome-shell-extensions.gcampax.github.com"
+            "native-window-placement@gnome-shell-extensions.gcampax.github.com"
+            "places-menu@gnome-shell-extensions.gcampax.github.com"
+            "screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com"
+            "user-theme@gnome-shell-extensions.gcampax.github.com"
+          ];
           enabled-extensions = [
             "caffeine@patapn.info"
             "dash-to-panel@jderose9.github.com"
