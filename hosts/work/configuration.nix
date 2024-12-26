@@ -4,8 +4,7 @@
   imports = 
     [
       ./hardware-configuration.nix
-      ./common/locale.nix
-      ./common/current-system-packages.nix
+      ./common/default.nix
       ./modules/gnome-hyper-v/default.nix
       ./hardening/baseline.nix
     ];
