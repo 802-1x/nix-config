@@ -239,6 +239,7 @@
     gnome-photos
     tali
     totem
+    gnome-calendar
     gnome-tour
     gnome-weather
     yelp
