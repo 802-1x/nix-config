@@ -133,10 +133,15 @@
 
         "org/gnome/shell/extensions/caffeine" = {
           toggle-state = true;
-          show-notifications = true;
-          show-indicator = true;
+          enable-fullscreen = true;
           restore-state = true;
-          user-enabled = true;
+          nightlight-control = "never";
+          screen-blank = "never";
+          show-indicator = "always";
+          show-timer = false;
+          show-notifications = true;
+          use-custom-duration = true;
+          duration-timer-list = ["1800" "3600" "10800"];
         };
 
         "org/gnome/shell/extensions/workspace-indicator" = {
