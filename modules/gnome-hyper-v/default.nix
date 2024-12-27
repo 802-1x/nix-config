@@ -132,7 +132,7 @@
           ];
           enabled-extensions = [
             "blur-my-shell@aunetx"
-            "caffeine@patapn.info"
+            "caffeine@patapon.info"
             "pop-shell@system76.com"
             "dash-to-panel@jderose9.github.com"
             "gnome-shell-screenshot@ttll.de"
