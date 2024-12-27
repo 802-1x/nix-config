@@ -59,6 +59,8 @@
       "device.sensors.orientation.enabled" = false;
       "device.sensors.proximity.enabled" = false;
 
+      "healthreport.uploadEnabled" = false;
+
       "dom.battery.enabled" = false;
       "dom.event.clipboardevents.enabled" = false;
       "dom.push.enabled" = false;
@@ -73,8 +75,15 @@
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
 
+      "privacy.donottrackheader.enabled" = true;
       "privacy.firstparty.isolate" = true;
-      "privacy.resistFingerprinting" = true
+      "privacy.resistFingerprinting" = true;
+      "privacy.trackingprotection.cryptomining.enabled" = true;
+      "privacy.trackingprotection.enabled" = true;
+      "privacy.trackingprotection.fingerprinting.enabled" = true;
+      "privacy.trackingprotection.pbmode.enabled" = true;
+      "privacy.trackingprotection.socialtracking.enabled" = true;
+      "privacy.usercontext.about_newtab_segregation.enabled" = true;
     };
   };
 
