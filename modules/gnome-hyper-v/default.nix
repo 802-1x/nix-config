@@ -24,6 +24,8 @@
     };
     preferences = {
       "toolkit.telemetry.server" = false;
+      "network.dns.disablePrefetch" = true;
+      "network.dns.disablePrefetchFromHTTPS" = true;
     };
   };
 
