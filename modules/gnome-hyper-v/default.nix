@@ -23,6 +23,8 @@
       DisablePocket = true;
     };
     preferences = {
+      "accessibility.force_disabled" = "1";
+
       "toolkit.telemetry.server" = false;
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
