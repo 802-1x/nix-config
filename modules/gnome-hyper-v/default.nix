@@ -15,6 +15,15 @@
     avahi.enable = false;
   };
 
+  # Firefox configuration
+  programs.firefox = {
+    enable = true;
+    policies = {
+      DisableTelemetry = true;
+      DisablePocket = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     gnome-remote-desktop
     gnomeExtensions.blur-my-shell
