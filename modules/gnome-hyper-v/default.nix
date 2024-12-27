@@ -25,6 +25,7 @@
     gnomeExtensions.workspace-indicator
     gnomeExtensions.vitals
     dconf-editor
+    firefox
   ];
 
   # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
@@ -142,6 +143,8 @@
           ];
           favorite-apps = [
             "org.gnome.Nautilus.desktop"
+            "org.gnome.Console.desktop"
+            "firefox.desktop"
             "kali.desktop"
           ];
         };
