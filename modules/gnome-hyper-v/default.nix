@@ -48,6 +48,7 @@
       "browser.shell.checkDefaultBrowser" = true;
       "browser.startup.homepage" = "about:blank";
       "browser.tabs.crashReporting.sendReport" = false;
+      "browser.urlbar.speculativeConnect.enabled" = false;
 
       "datareporting.healthreport.uploadEnabled" = false;
 
@@ -58,12 +59,22 @@
       "device.sensors.orientation.enabled" = false;
       "device.sensors.proximity.enabled" = false;
 
+      "dom.battery.enabled" = false;
+      "dom.event.clipboardevents.enabled" = false;
+      "dom.push.enabled" = false;
+      "dom.security.https_only_mode_ever_enabled" = true;
+      "dom.security.https_only_mode" = true;
+      "dom.webaudio.enabled" = false;
+
       "experiments.formautofill.addresses.experiements.enabled" = false;
       "extensions.experiments.enabled" = false;
 
       "toolkit.telemetry.server" = false;
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
+
+      "privacy.firstparty.isolate" = true;
+      "privacy.resistFingerprinting" = true
     };
   };
 
