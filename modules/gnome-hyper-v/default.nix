@@ -22,6 +22,9 @@
       DisableTelemetry = true;
       DisablePocket = true;
     };
+    preferences = {
+      "toolkit.telemetry.server" = false;
+    };
   };
 
   environment.systemPackages = with pkgs; [
