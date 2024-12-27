@@ -34,8 +34,8 @@
       settings = {
         "org/gnome/desktop/background" = {
           color-shading-type = "solid";
-          picture-uri = "https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
-          picture-uri-dark = "https://raw.githubusercontent.com/organgci/walls/main/cherry-6.png";
+          picture-uri = "https://raw.githubusercontent.com/orangci/walls/main/cherry-6.png";
+          picture-uri-dark = "https://raw.githubusercontent.com/orangci/walls/main/cherry-6.png";
           picture-options = "stretched";
           primary-color = "#3071AE";
           secondary-color = "#000000";
