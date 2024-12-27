@@ -174,7 +174,7 @@
           workspace-names = "[ 'display', 'work', 'other' ]";
         };
 
-        "org/gnome/shell/extensions/vital" = {
+        "org/gnome/shell/extensions/vitals" = {
           update-time = "5";
           position-in-panel = "2";
           use-higher-precision = true;
@@ -183,7 +183,7 @@
           fixed-widths = true;
           hide-icons = false;
           menu-centered = true;
-          icon-styles = "1";
+          icon-styles = "0";
           show-temperature = false;
           show-voltage = false;
           show-fan = false;
