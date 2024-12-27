@@ -44,6 +44,8 @@
       "browser.discovery.enabled" = false;
       "browser.newtab.preload" = true;
       "browser.region.network.scan" = false;
+      "browser.sessionstore.resume_from_crash" = true;
+      "browser.sessionstore.resuming_after_os_restart" = true;
       "browser.send_pings" = false;
       "browser.shell.checkDefaultBrowser" = true;
       "browser.startup.homepage" = "about:blank";
