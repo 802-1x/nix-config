@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
       ./common/default.nix
       ./modules/gnome-hyper-v/default.nix
-      ./hardening/baseline.nix
+      ./common/hardening/default.nix
       ./users/work/default.nix
     ];
 
