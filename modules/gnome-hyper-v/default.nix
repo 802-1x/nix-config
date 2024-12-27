@@ -71,9 +71,12 @@
       "experiments.formautofill.addresses.experiements.enabled" = false;
       "extensions.experiments.enabled" = false;
 
-      "toolkit.telemetry.server" = false;
+      "media.navigator.enabled" = false;
+
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
+
+      "toolkit.telemetry.server" = false;
 
       "privacy.donottrackheader.enabled" = true;
       "privacy.firstparty.isolate" = true;
