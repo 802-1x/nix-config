@@ -27,6 +27,9 @@
 
       "beacon.enabled" = false;
 
+      "experiments.formautofill.addresses.experiements.enabled" = false;
+      "extensions.experiments.enabled" = false;
+
       "toolkit.telemetry.server" = false;
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
