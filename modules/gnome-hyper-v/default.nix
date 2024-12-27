@@ -142,6 +142,7 @@
           ];
           favorite-apps = [
             "org.gnome.Nautilus.desktop"
+            "kali.desktop"
           ];
         };
 
