@@ -25,6 +25,8 @@
     preferences = {
       "accessibility.force_disabled" = "1";
 
+      "beacon.enabled" = false;
+
       "toolkit.telemetry.server" = false;
       "network.dns.disablePrefetch" = true;
       "network.dns.disablePrefetchFromHTTPS" = true;
