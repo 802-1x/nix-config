@@ -35,6 +35,20 @@
 
       "beacon.enabled" = false;
 
+      "breakpad.reportURL" = "";
+
+      "browser.aboutConfig.showWarning" = false;
+      "browser.aboutConfig.showWarning" = false;
+      "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
+      "browser.crashReports.unsubmittedCheck.enabled" = false;
+      "browser.discovery.enabled" = false;
+      "browser.newtab.preload" = true;
+      "browser.region.network.scan" = false;
+      "browser.send_pings" = false;
+      "browser.shell.checkDefaultBrowser" = true;
+      "browser.startup.homepage" = "about:blank";
+      "browser.tabs.crashReporting.sendReport" = false;
+
       "experiments.formautofill.addresses.experiements.enabled" = false;
       "extensions.experiments.enabled" = false;
 
