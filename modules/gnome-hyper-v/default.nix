@@ -49,6 +49,15 @@
       "browser.startup.homepage" = "about:blank";
       "browser.tabs.crashReporting.sendReport" = false;
 
+      "datareporting.healthreport.uploadEnabled" = false;
+
+      "datareporting.healthreport.uploadEnabled" = false;
+      "device.sensors.ambientLight.enabled" = false;
+      "device.sensors.enabled" = false;
+      "device.sensors.motion.enabled" = false;
+      "device.sensors.orientation.enabled" = false;
+      "device.sensors.proximity.enabled" = false;
+
       "experiments.formautofill.addresses.experiements.enabled" = false;
       "extensions.experiments.enabled" = false;
 
