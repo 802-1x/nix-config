@@ -25,6 +25,14 @@
     preferences = {
       "accessibility.force_disabled" = "1";
 
+      "app.feedback.baseURL" = "localhost";
+      "app.normandy.api_url" = "";
+      "app.normandy.enabled" = false;
+      "app.releaseNotesURL" = "localhost";
+      "app.shield.optoutstudies.enabled" = false;
+      "app.support.baseURL" = "localhost";
+      "app.update.auto" = true;
+
       "beacon.enabled" = false;
 
       "experiments.formautofill.addresses.experiements.enabled" = false;
