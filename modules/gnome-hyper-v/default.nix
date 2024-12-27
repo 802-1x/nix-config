@@ -171,7 +171,7 @@
         "org/gnome/shell/extensions/workspace-indicator" = {
           user-enabled = true;
           embed-previews = true;
-          workspace-names = "[ 'display', 'work', 'other' ]";
+          workspace-names = ["display" "work" "other"];
         };
 
         "org/gnome/shell/extensions/vitals" = {
@@ -243,6 +243,7 @@
     gnome-calendar
     gnome-tour
     gnome-weather
+    nixos-render-docs
     yelp
   ];
 
