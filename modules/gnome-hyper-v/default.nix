@@ -295,6 +295,14 @@
           smart-gaps = true;
         };
 
+        "org/gnome/mutter" = {
+          overlay-key = "";
+        };
+
+        "org/gnome/shell/keybindings" = {
+          toggle-application-view = ["Super_L"];
+        };
+
         "system/proxy" = {
           mode = "none";
         };
