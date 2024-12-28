@@ -295,10 +295,12 @@
           smart-gaps = true;
         };
 
+        # Changing super key to open Show Apps by default
         "org/gnome/mutter" = {
           overlay-key = "";
         };
 
+        # Changing super key to open Show Apps by default
         "org/gnome/shell/keybindings" = {
           toggle-application-view = ["Super_L"];
         };
