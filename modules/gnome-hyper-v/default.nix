@@ -7,6 +7,7 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    excludePackages = with pkgs; [ xterm ];
     modules = [ pkgs.xorg.xf86videofbdev ];
   };
 
@@ -14,6 +15,19 @@
     # Enabled by default: https://github.com/NixOS/nixpkgs/blob/9a12573d6fde9d5aabbf242da144804454c5080c/nixos/modules/services/x11/desktop-managers/gnome.nix#L413
     avahi.enable = false;
   };
+
+  environment.systemPackages = with pkgs; [
+    gnome-remote-desktop
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.caffeine
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.media-controls
+    gnomeExtensions.pop-shell
+    gnomeExtensions.workspace-indicator
+    gnomeExtensions.vitals
+    dconf-editor
+    firefox
+  ];
 
   # Firefox configuration
   programs.firefox = {
@@ -38,15 +52,14 @@
       "breakpad.reportURL" = "";
 
       "browser.aboutConfig.showWarning" = false;
-      "browser.aboutConfig.showWarning" = false;
       "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
       "browser.crashReports.unsubmittedCheck.enabled" = false;
       "browser.discovery.enabled" = false;
       "browser.newtab.preload" = true;
       "browser.region.network.scan" = false;
+      "browser.send_pings" = false;
       "browser.sessionstore.resume_from_crash" = true;
       "browser.sessionstore.resuming_after_os_restart" = true;
-      "browser.send_pings" = false;
       "browser.shell.checkDefaultBrowser" = true;
       "browser.startup.homepage" = "about:blank";
       "browser.tabs.crashReporting.sendReport" = false;
@@ -54,14 +67,11 @@
 
       "datareporting.healthreport.uploadEnabled" = false;
 
-      "datareporting.healthreport.uploadEnabled" = false;
       "device.sensors.ambientLight.enabled" = false;
       "device.sensors.enabled" = false;
       "device.sensors.motion.enabled" = false;
       "device.sensors.orientation.enabled" = false;
       "device.sensors.proximity.enabled" = false;
-
-      "healthreport.uploadEnabled" = false;
 
       "dom.battery.enabled" = false;
       "dom.event.clipboardevents.enabled" = false;
@@ -91,19 +101,6 @@
       "privacy.usercontext.about_newtab_segregation.enabled" = true;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    gnome-remote-desktop
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.caffeine
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.media-controls
-    gnomeExtensions.pop-shell
-    gnomeExtensions.workspace-indicator
-    gnomeExtensions.vitals
-    dconf-editor
-    firefox
-  ];
 
   # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
   programs.dconf.profiles.user = {
@@ -283,6 +280,32 @@
           animate-window-launch = true;
           stockgs-keep-dash = false;
           tray-size = "0";
+          panel-sizes = ''{"0":"36"}'';
+          show-apps-icon-side-padding = "0";
+          show-apps-override-escape = true;
+          show-desktop-hover = true;
+          show-showdesktop-delay = "0";
+          showdesktop-button-width = "1";
+          panel-element-positions = ''
+            '{"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"centerMonitor"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}''';
+          };
+          appicon-margin = "4";
+          appicon-padding = "4";
+          animate-appicon-hover = true;
+          appicon-style = "NORMAL";
+          animate-appicon-hover-animation-type = "SIMPLE";
+          dot-position = "BOTTOM";
+          dot-style-focused = "METRO";
+          dot-style-unfocused = "DOTS";
+          trans-user-custom-bg = true;
+          trans-bg-color = "#9a9996";
+          trans-use-custom-opacity = true;
+          trans-panel-opacity = "0.40000000000000002";
+          trans-use-custom-gradient = true;
+          show-favorites = true;
+          show-favorites-all-monitors = true;
+          show-running-apps = true;
+          isolate-workspaces = false;
         };
 
         "org/gnome/shell/extensions/pop-shell" = {
@@ -300,11 +323,15 @@
           overlay-key = "";
         };
 
-        # Changing super key to open Show Apps by default
         "org/gnome/shell/keybindings" = {
           toggle-application-view = ["Super_L"];
         };
 
+        "org/gnome/shell/extensions/dash-to-panel" = {
+          show-apps-icon-file = "/etc/nixos/modules/gnome-hyper-v/NixOS.png";
+        };
+
+        # Remove proxy configuration
         "system/proxy" = {
           mode = "none";
         };
