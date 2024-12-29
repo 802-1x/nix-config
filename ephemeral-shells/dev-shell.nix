@@ -2,7 +2,26 @@
 
 let
   myBuildInputs = [
-    pkgs.vscode
+    (pkgs.vscode-with-extensions.override {
+      vscode = pkgs.vscodium;
+      vscodeExtensions = with pkgs.vscode-extensions; [
+        ms-python.python
+        ms-vscode.cpptools
+        mechatroner.rainbow-csv
+        esbenp.prettier-vscode
+        ms-vscode.powershell
+        jnoortheen.nix-ide
+        mkhl.direnv
+        dbaeumer.vscode-eslint
+        hashicorp.terraform
+        redhat.vscode-yaml
+        james-yu.latex-workshop
+        rust-lang.rust-analyzer
+        streetsidesoftware.code-spell-checker
+        timonwong.shellcheck
+        yzhang.markdown-all-in-one
+      ];
+    })
     pkgs.smlnj
     pkgs.bandit
     pkgs.python3
@@ -20,7 +39,7 @@ in
     # Append SHELL_TRACKER environment variable
     export SHELL_TRACKER="$SHELL_TRACKER:dev"
 
-    echo "Welcome to the development shell!"
-    echo "Build inputs: ${builtins.concatStringsSep ", " packageNames}"
+    echo -e "\e[36mWelcome to the development shell!\e[0m"
+    echo -e "\e[32mBuild inputs: ${builtins.concatStringsSep ", " packageNames}\e[0m"
   '';
 }
