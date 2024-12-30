@@ -1,7 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
+{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
 
 let
-  myBuildInputs = [];
+  myBuildInputs = [
+    pkgs.burpsuite
+  ];
 
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
 
@@ -16,5 +18,8 @@ in
       alias egressTCPTester='/etc/nixos/apps/egressTCPTester/main.bin'
     
       echo "Alias 'egressTCPTester' created."
+
+      echo "Welcome to the presentation shell!"
+      echo "Build inputs: ${builtins.concatStringsSep ", " packageNames}"
     '';
   }
