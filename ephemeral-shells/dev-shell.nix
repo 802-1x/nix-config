@@ -27,6 +27,7 @@ let
     pkgs.python3
     pkgs.python3Packages.nuitka
     pkgs.python3Packages.flask
+    pkgs.postman
   ];
 
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
