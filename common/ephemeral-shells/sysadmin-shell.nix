@@ -25,6 +25,7 @@ in
     export SHELL_TRACKER="$SHELL_TRACKER:sysadmin"
 
     mkdir -p ~/.config/nvim
-      cp ${neovimConfig} ~/.config/nvim/init.lua
+    chmod u+w /home/%USER/.config/nvim/ini
+    cp ${neovimConfig} ~/.config/nvim/init.lua
     '';
   }
