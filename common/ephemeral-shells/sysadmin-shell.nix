@@ -33,7 +33,7 @@ pkgs.mkShell {
     echo -e "\e[32mBuild inputs: ${concatPackageNames}\e[0m"
 
     mkdir -p ~/.config/nvim
-    chmod u+w /home/%USER/.config/nvim/ini
     cp ${neovimConfig} ~/.config/nvim/init.lua
+    chmod u+w ~/.config/nvim/init.lua
   '';
 }
