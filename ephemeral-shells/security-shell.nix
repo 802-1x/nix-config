@@ -3,6 +3,7 @@
 let
   myBuildInputs = [
     pkgs.burpsuite
+    pkgs.nmap
   ];
 
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
