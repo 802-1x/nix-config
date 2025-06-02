@@ -5,9 +5,10 @@
     [
       ./hardware-configuration.nix
       ./common/default.nix
-      ./common/ephemeral-shells/default.nix
-      ./hardening/baseline.nix
+      ./common/hardening/baseline.nix
       ./modules/baremetal-fmediapc/default.nix
+      ./users/admin.nix
+      ./users/fmediapc/default.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -16,6 +17,10 @@
 
   networking.hostName = "fmediapc";
   networking.networkmanager.enable = true;
+
+  environment.shellAliases = {
+    sysadmin = "${pkgs.nix}/bin/nix-shell /etc/nixos/common/ephemeral-shells/sysadmin-shell.nix";
+  };
 
   system.stateVersion = "24.05";
 }
