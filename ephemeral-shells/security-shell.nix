@@ -1,24 +1,22 @@
 { pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
 
 let
+  evilWinrm = import /etc/nixos/ephemeral-shell/security-shell/evil-winrm.nix { inherit pkgs; };
+
+  # Use evil-winrm only if not already in pkgs
+  resolvedEvilWinrm = if pkgs ? evil-winrm then pkgs.evil-winrm else evilWinrm;
+
   myBuildInputs = [
     pkgs.burpsuite
     pkgs.nmap
-    # cme requirements
-    pkgs.python3
-    pkgs.python3Packages.pip
-    pkgs.python3Packages.virtualenv
-    pkgs.git
-    pkgs.libffi
-    pkgs.openssl
-    pkgs.pkg-config
+    pkgs.netexec
+    pkgs.smbclient-ng
+    pkgs.smbmap
+    pkgs.samba
+    resolvedEvilWinrm
   ];
 
-  cmeCommit = "25978c0";
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
-
-  # Use a fixed virtualenv location to avoid unecessary rebuilts
-  venvPath = "$HOME/.cache/crackmapexec-venv";
 
 in
 pkgs.mkShell {
@@ -29,31 +27,32 @@ pkgs.mkShell {
     export SHELL_TRACKER="$SHELL_TRACKER:security"
 
     echo -e "\e[36mWelcome to the security shell!\e[0m"
+    echo -e "\e[36mYou are in a fish-y shell environment.\e[0m"
     echo -e "\e[32mBuild inputs: ${builtins.concatStringsSep ", " packageNames}\e[0m"
 
     alias egressTCPTester='/etc/nixos/apps/egressTCPTester/main.bin'
     echo -e "\e[33mAlias 'egressTCPTester' created.\e[0m"
 
-    # Create the shared Python venv only if it doesn't exist
-    if [ ! -d .venv ]; then
-      echo -e "\e[33m[*] Creating Python virtual environment at ${venvPath}...\e[0m"
-      python3 -m venv "${venvPath}"
+    # Setup local smb.conf in ~/.config
+    mkdir -p "$HOME/.config"
+    export SMB_CONF_PATH="$HOME/.config/smb.conf"
+    if [ ! -f "$SMB_CONF_PATH" ]; then
+      cat > "$SMB_CONF_PATH" <<EOF
+[global]
+   workgroup = WORKGROUP
+   security = user
+EOF
+      echo -e "\e[33mGenerated \$SMB_CONF_PATH\e[0m"
     fi
 
-    # Activate the venv
-    source "${venvPath}/bin/activate"
+    # Alias rpcclient with config path
+    alias rpcclient='SMB_CONF_PATH=$HOME/.config/smb.conf rpcclient'
+    echo -e "\e[33mAlias 'rpcclient' now uses \$HOME/.config/smb.conf\e[0m"
 
-    # Install CrackMapExec only once (check marker file)
-    if [ ! -f "${venvPath}/.cme_installed" ]; then
-      echo -e "\e[33m[*] Installing CrackMapExec from commit ${cmeCommit}...\e[0m"
-      pip install --upgrade pip
-      pip install "git+https://github.com/Porchetta-Industries/CrackMapExec.git@${cmeCommit}#egg=crackmapexec"
-      mkdir -p "${venvPath}"
-      touch ${venvPath}/.cme_installed
-    else
-      echo -e "\e[33m[*] CrackMapExec is already installed \(marker found: ${venvPath}/.cme_installed\).\e[0m"
+    # Must come after above output commands otherwise fish gobbles the current shell process stopping further display output
+    if [ -z "$IN_FISH_SECURITY" ]; then
+      export IN_FISH_SECURITY=1
+      exec ${pkgs.fish}/bin/fish
     fi
-
-    echo -e "\e[33m[*] CrackMapExec is ready. Use 'cme' command.\e[0m"
   '';
 }
