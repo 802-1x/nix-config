@@ -2,9 +2,13 @@
 
 let
   evilWinrm = import /etc/nixos/ephemeral-shell/security-shell/evil-winrm.nix { inherit pkgs; };
+  gppDecrypt = import /etc/nixos/ephemeral-shells/security-shell/gpp-decrypt.nix { inherit pkgs; };
 
   # Use evil-winrm only if not already in pkgs
   resolvedEvilWinrm = if pkgs ? evil-winrm then pkgs.evil-winrm else evilWinrm;
+
+  # Use gpp-decrypt only if not already in pkgs
+  resolvedGppDecrypt = if pkgs ? gpp-decrypt then pkgs.gpp-decrypt else gppDecrypt;
 
   myBuildInputs = [
     pkgs.burpsuite
