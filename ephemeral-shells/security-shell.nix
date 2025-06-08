@@ -18,6 +18,7 @@ let
     pkgs.smbmap
     pkgs.samba
     resolvedEvilWinrm
+    resolvedGppDecrypt
   ];
 
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
