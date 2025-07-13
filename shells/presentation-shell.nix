@@ -1,4 +1,6 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 
 let
   myBuildInputs = [
@@ -8,8 +10,8 @@ let
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
 
 in
-  pkgs.mkShell {
-    buildInputs = myBuildInputs;
+pkgs.mkShell {
+  buildInputs = myBuildInputs;
 
   shellHook = ''
     # Append SHELL_TRACKER environment variable

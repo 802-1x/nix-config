@@ -1,9 +1,8 @@
 { pkgs, ... }:
-
 {
   users.users.fmediapc = {
     isNormalUser = true;
-    home ="/home/fmediapc";
+    home = "/home/fmediapc";
     extraGroups = [ ];
     packages = with pkgs; [
       firefox

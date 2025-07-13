@@ -1,0 +1,85 @@
+PATH
+  remote: .
+  specs:
+    evil-winrm (3.7)
+      fileutils (~> 1.0)
+      logger (~> 1.4, >= 1.4.3)
+      stringio (~> 3.0)
+      winrm (~> 2.3, >= 2.3.7)
+      winrm-fs (~> 1.3, >= 1.3.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    base64 (0.3.0)
+    bigdecimal (3.2.2)
+    builder (3.3.0)
+    erubi (1.13.1)
+    ffi (1.17.2)
+    ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-aarch64-linux-musl)
+    ffi (1.17.2-arm-linux-gnu)
+    ffi (1.17.2-arm-linux-musl)
+    ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86-linux-gnu)
+    ffi (1.17.2-x86-linux-musl)
+    ffi (1.17.2-x86_64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
+    ffi (1.17.2-x86_64-linux-musl)
+    fileutils (1.7.3)
+    gssapi (1.3.1)
+      ffi (>= 1.0.1)
+    gyoku (1.4.0)
+      builder (>= 2.1.2)
+      rexml (~> 3.0)
+    httpclient (2.9.0)
+      mutex_m
+    little-plugger (1.1.4)
+    logger (1.7.0)
+    logging (2.4.0)
+      little-plugger (~> 1.1)
+      multi_json (~> 1.14)
+    multi_json (1.16.0)
+    mutex_m (0.3.0)
+    nori (2.7.1)
+      bigdecimal
+    rexml (3.4.1)
+    rubyntlm (0.6.5)
+      base64
+    rubyzip (2.4.1)
+    stringio (3.1.7)
+    winrm (2.3.9)
+      builder (>= 2.1.2)
+      erubi (~> 1.8)
+      gssapi (~> 1.2)
+      gyoku (~> 1.0)
+      httpclient (~> 2.2, >= 2.2.0.2)
+      logging (>= 1.6.1, < 3.0)
+      nori (~> 2.0, >= 2.7.1)
+      rexml (~> 3.0)
+      rubyntlm (~> 0.6.0, >= 0.6.3)
+    winrm-fs (1.3.5)
+      erubi (~> 1.8)
+      logging (>= 1.6.1, < 3.0)
+      rubyzip (~> 2.0)
+      winrm (~> 2.0)
+
+PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
+  arm64-darwin
+  ruby
+  x86-linux-gnu
+  x86-linux-musl
+  x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
+
+DEPENDENCIES
+  bundler (~> 2.0)
+  evil-winrm!
+
+BUNDLED WITH
+   2.5.22

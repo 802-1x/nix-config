@@ -1,11 +1,16 @@
-{ config, lib, pkgs, ... }:
+{
+  pkgs,
+  self,
+  ...
+}:
 
 {
-  imports = [
+  imports = with self.nixosModules; [
     # include NixOS-WSL modules
-    <nixos-wsl/modules>
-    ./common/default.nix
-    ./hardening/default.nix
+    self.inputs.nixos-wsl.nixosModules.default
+
+    defaults
+    hardening
   ];
 
   # Fix up wayland support for GIU applictions
@@ -27,10 +32,12 @@
 
   # Environment aliases
   environment.shellAliases = {
-    sysadmin = "${pkgs.nix}/bin/nix-shell /etc/nixos/common/ephemeral-shells/sysadmin-shell.nix";
-    dev = "${pkgs.nix}/bin/nix-shell /etc/nixos/ephemeral-shells/dev-shell.nix";
-    code = "codium";
-    parrot = "podman start -ai parrot";
+    inherit (self.shellAliases.${pkgs.system})
+      code
+      dev
+      parrot
+      sysadmin
+      ;
   };
 
   wsl.enable = true;

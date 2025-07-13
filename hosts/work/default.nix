@@ -1,13 +1,18 @@
-{ config, lib, pkgs, ... }:
+{
+  self,
+  ...
+}:
 
 {
-  imports = 
-    [
-      ./hardware-configuration.nix
-      ./common/default.nix
-      ./modules/gnome-hyper-v/default.nix
-      ./hardening/baseline.nix
-    ];
+  imports = with self.nixosModules; [
+    # This was not source controlled - make sure to move any required
+    # values across to flake if adopted
+    # ./hardware-configuration.nix
+
+    defaults
+    hardening
+    gnome-hyper-v
+  ];
 
   # Use the GRUB 2 boot loader
   boot.loader.grub.enable = true;
