@@ -1,4 +1,7 @@
-{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
+{
+  pkgs,
+  ...
+}:
 
 pkgs.mkShell {
   buildInputs = [ pkgs.terraform ];

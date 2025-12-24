@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Enable the OpenSSH daemon
@@ -193,58 +193,60 @@
 
   # If using GNOME Desktop Manager then exclude these packages from installation
   environment.gnome.excludePackages = with pkgs; [
-    gnome.cheese
-    gnome.epiphany
-    gnome.evince
-    gnome.geary
-    gnome.atomix
-    gnome.gnome-characters
-    gnome-connections
-    gnome.gnome-contacts
+    atomix
+    cheese
+    epiphany
+    evince
+    geary
     gedit
-    gnome.hitori
-    gnome.iagno
-    gnome.gnome-initial-setup
-    gnome.gnome-maps
-    gnome.gnome-music
+    gnome-calendar
+    gnome-characters
+    gnome-connections
+    gnome-contacts
+    gnome-initial-setup
+    gnome-maps
+    gnome-music
     gnome-photos
-    gnome.tali
-    gnome.totem
-    gnome.gnome-calendar
     gnome-tour
-    gnome.gnome-weather
+    gnome-weather
+    hitori
+    iagno
     nixos-render-docs
-    gnome.yelp
+    tali
+    totem
+    yelp
   ];
 
   # Remember that using "dconf watch /" at the terminal greatly aids in troubleshooting
   programs.dconf.profiles.user = {
-    databases = [{
-      lockAll = false;
-      settings = {
-        "org/gnome/desktop/interface" = {
-          clock-format = "24h";
-          clock-show-date = true;
-          clock-show-seconds = true;
-          clock-show-weekday = true;
-          color-scheme = "prefer-dark";
-        };
+    databases = [
+      {
+        lockAll = false;
+        settings = {
+          "org/gnome/desktop/interface" = {
+            clock-format = "24h";
+            clock-show-date = true;
+            clock-show-seconds = true;
+            clock-show-weekday = true;
+            color-scheme = "prefer-dark";
+          };
 
-        "org/gnome/shell" = {
-	  favorite-apps = [
-            "org.gnome.Nautilus.desktop"
-            "firefox.desktop"
-          ];
-        };
+          "org/gnome/shell" = {
+            favorite-apps = [
+              "org.gnome.Nautilus.desktop"
+              "firefox.desktop"
+            ];
+          };
 
-	"org/gnome/desktop/peripherals/keyboard" = {
-          numlock-state = true;
-        };
+          "org/gnome/desktop/peripherals/keyboard" = {
+            numlock-state = true;
+          };
 
-        "org/gnome/desktop/privacy" = {
-          disable-microphone = false;
+          "org/gnome/desktop/privacy" = {
+            disable-microphone = false;
+          };
         };
-      };
-    }];
+      }
+    ];
   };
 }

@@ -1,6 +1,4 @@
-_:
-
-{
+_: {
   environment.sessionVariables = {
     SHELL_TRACKER = "";
   };

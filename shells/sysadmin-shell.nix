@@ -1,4 +1,7 @@
-{ pkgs ? import <nixpkgs> {} }:
+{
+  pkgs,
+  ...
+}:
 
 let
   neovimConfig = builtins.toFile "init.lua" ''

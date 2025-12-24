@@ -1,5 +1,7 @@
-{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
-
+{
+  pkgs,
+  ...
+}:
 let
   myBuildInputs = [
     (pkgs.vscode-with-extensions.override {
@@ -33,8 +35,8 @@ let
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
 
 in
-  pkgs.mkShell {
-    buildInputs = myBuildInputs;
+pkgs.mkShell {
+  buildInputs = myBuildInputs;
 
   shellHook = ''
     # Append SHELL_TRACKER environment variable
