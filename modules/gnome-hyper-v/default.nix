@@ -5,11 +5,11 @@
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
     excludePackages = with pkgs; [ xterm ];
     modules = [ pkgs.xorg.xf86videofbdev ];
   };
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   services = {
     # Enabled by default: https://github.com/NixOS/nixpkgs/blob/9a12573d6fde9d5aabbf242da144804454c5080c/nixos/modules/services/x11/desktop-managers/gnome.nix#L413
