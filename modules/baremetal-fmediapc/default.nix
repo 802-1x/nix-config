@@ -77,15 +77,11 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Suspend settings with closed lid
-  services.logind = {
-    lidSwitch = "ignore";
-    lidSwitchDocked = "ignore";
-    lidSwitchExternalPower = "ignore";
-    extraConfig = ''
-      handleSuspendKey=suspend
-      HandleLidSwitch=ignore
-    '';
+  services.logind.settings.Login = {
+    HandleSuspendKey = "suspend";
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
   };
 
   # Enable Suspend, Disable Hibernate
