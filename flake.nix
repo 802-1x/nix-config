@@ -62,8 +62,8 @@
           locale = import ./modules/locale;
           freetube = import ./modules/freetube;
           keepassxc = import ./modules/keepassxc;
-	        signal = import ./modules/signal;
-	        wezterm-config = import ./modules/wezterm-config;
+          signal = import ./modules/signal;
+          wezterm-config = import ./modules/wezterm-config;
           winbox = import ./modules/winbox;
         };
 
@@ -73,63 +73,63 @@
               environment.shellAliases = myAliases pkgs;
             };
             platformModule = {
-	            nixpkgs.hostPlatform = "x86_64-linux";
+              nixpkgs.hostPlatform = "x86_64-linux";
             };
-	        in {
+          in {
             fmediapc = nixpkgs.lib.nixosSystem {
               specialArgs = { inherit self; };
               modules = [
-	              platformModule
-	              (import ./hosts/fmediapc)
-	              mkAliasModule
-	              agenix.nixosModules.default
-	            ];
+                platformModule
+                (import ./hosts/fmediapc)
+                mkAliasModule
+                agenix.nixosModules.default
+              ];
             };
 
             test = nixpkgs.lib.nixosSystem {
               specialArgs = { inherit self; };
               modules = [
-	              platformModule
-	              (import ./hosts/test)
-	              mkAliasModule
-	              agenix.nixosModules.default
-	            ];
+                platformModule
+                (import ./hosts/test)
+                mkAliasModule
+                agenix.nixosModules.default
+              ];
             };
 
             work = nixpkgs.lib.nixosSystem {
               specialArgs = { inherit self; };
               modules = [
-	              platformModule
-	              (import ./hosts/work)
-	              mkAliasModule
-	              agenix.nixosModules.default
-	            ];
+                platformModule
+                (import ./hosts/work)
+                mkAliasModule
+                agenix.nixosModules.default
+              ];
             };
 
             wsl = nixpkgs.lib.nixosSystem {
               specialArgs = { inherit self; };
               modules = [
-	              platformModule
-	              (import ./hosts/wsl)
-	              mkAliasModule
-	              agenix.nixosModules.default
-	            ];
+                platformModule
+                (import ./hosts/wsl)
+                mkAliasModule
+                agenix.nixosModules.default
+              ];
             };
 
             laptop = nixpkgs.lib.nixosSystem {
               specialArgs = { inherit self; };
               modules = [
-	              platformModule
-	              (import ./hosts/laptop)
-	              mkAliasModule
-	              agenix.nixosModules.default
-	              home-manager.nixosModules.home-manager
-	              {
-	                home-manager.useGlobalPkgs = true;
-		              home-manager.useUserPackages = true;
+                platformModule
+                (import ./hosts/laptop)
+                mkAliasModule
+                agenix.nixosModules.default
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
                   # Ensure the activation service can access the nix daemon
                   home-manager.backupFileExtension = "backup"; 
-	              }
+                }
                 # Ensure nix settings allow specified users to interact with the store - required for home-manager
                 {
                   nix.settings.trusted-users = [ "root" "admin" "user" ];
