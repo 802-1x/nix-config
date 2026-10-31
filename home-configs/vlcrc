@@ -1,0 +1,3 @@
+# Home Manager declarative VLC config
+qt-privacy-ask=0
+metadata-network-access=0
