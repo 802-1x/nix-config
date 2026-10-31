@@ -1,7 +1,5 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs ? import <nixpkgs> { config.allowUnfree = true; } }:
+
 let
   myBuildInputs = [
     (pkgs.vscode-with-extensions.override {
@@ -26,14 +24,18 @@ let
     })
     pkgs.smlnj
     pkgs.bandit
+    pkgs.jq
     pkgs.python3
-    pkgs.python3Packages.nuitka
+    #pkgs.python3Packages.nuitka
     pkgs.python3Packages.flask
     pkgs.postman
+    pkgs.scc
+    pkgs.git
+    pkgs.pre-commit
+    pkgs.claude-code
   ];
 
   packageNames = builtins.map (pkg: pkg.name) myBuildInputs;
-
 in
 pkgs.mkShell {
   buildInputs = myBuildInputs;
