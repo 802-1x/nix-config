@@ -26,13 +26,26 @@
     }:
     let
       myAliases = pkgs: {
-        build = "${pkgs.nix}/bin/nix-shell ${self}/shells/build-shell.nix";
-        code = "${pkgs.vscodium}/bin/codium";
-        dev = "${pkgs.nix}/bin/nix-shell ${self}/shells/dev-shell.nix";
+        # Code editors
+        code = ''env DONT_PROMPT_WSL_INSTALL=1 codium .'';
+        scode = ''sudo env DONT_PROMPT_WSL_INSTALL=1 codium . --user-data-dir="$HOME/.vscode-root" --no-sandbox'';
+
+        # Containers
         parrot = "${pkgs.podman}/bin/podman start -ai parrot";
+
+        # Offsec engagement
+        show = "env | grep -E '^(engagement|machine|ip|hip|domain)='";
+
+        # Utility shells
+        envs = "echo \":$SHELL_TRACKER:\"";
+        build = "${pkgs.nix}/bin/nix-shell ${self}/shells/build-shell.nix";
+        dev = "${pkgs.nix}/bin/nix-shell ${self}/shells/dev-shell.nix";
         presentation = "${pkgs.nix}/bin/nix-shell ${self}/shells/presentation-shell.nix";
         security = "${pkgs.nix}/bin/nix-shell ${self}/shells/security-shell.nix";
         sysadmin = "${pkgs.nix}/bin/nix-shell ${self}/shells/sysadmin-shell.nix";
+
+        # winbox
+        winbox = "${pkgs.nix}/bin/nix-shell ${self}/shells/winbox-shell.nix";
       };
 
       flake-utils-outputs = flake-utils.lib.eachDefaultSystem (
@@ -57,14 +70,19 @@
           defaults = import ./modules/defaults;
           ephemeral-shells = import ./modules/ephemeral-shells;
           firewall-euc-strict = import ./modules/firewall-euc-strict;
+          firewall-euc-wireguard-client = import ./modules/firewall-euc-wireguard-client;
           gnome-hyper-v = import ./modules/gnome-hyper-v;
           hardening = import ./modules/hardening;
           locale = import ./modules/locale;
           freetube = import ./modules/freetube;
           keepassxc = import ./modules/keepassxc;
+          libretranslate = import ./modules/libretranslate;
           signal = import ./modules/signal;
+          ssh = import ./modules/ssh;
+          tailscale = import ./modules/tailscale;
           wezterm-config = import ./modules/wezterm-config;
-          winbox = import ./modules/winbox;
+          #winbox = import ./modules/winbox;
+          wireguard-client = import ./modules/wireguard-client;
         };
 
         nixosConfigurations = 
@@ -130,7 +148,7 @@
                   # Ensure the activation service can access the nix daemon
                   home-manager.backupFileExtension = "backup"; 
                 }
-                # Ensure nix settings allow specified users to interact with the store - required for home-manager
+                # Ensure nix settings allow specified users to interact with the store - home-manager requirement
                 {
                   nix.settings.trusted-users = [ "root" "admin" "user" ];
                 }
