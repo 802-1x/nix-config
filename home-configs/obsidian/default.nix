@@ -9,5 +9,6 @@ in
     inherit packages;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    lib.getName pkg == "obsidian";
 }
